@@ -1,0 +1,13 @@
+---
+execution:
+- concurrency: 10
+  hold-for: 10s
+  steps: 4
+  scenario: usecase-purchase
+scenarios:
+  usecase-purchase:
+    timeout: 5s
+    retrieve-resources: true
+    store-cache: false
+    store-cookie: false
+    default-address: http://blazedemo.com
