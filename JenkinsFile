@@ -33,7 +33,7 @@ pipeline
           stage('Nexus')
     {
      steps{
-          withCredentials([usernamePassword(credentialsId: 'nexus_Credentials', passwordVariable: 'pass', usernameVariable: 'userId')]) {
+          withCredentials([usernamePassword(credentialsId: 'nexus_Credentials', passwordVariable: 'trainee', usernameVariable: 'trainee')]) {
             sh   'curl -F file=@target/dynamic_new-${BUILD_NUMBER}.war -u $userId:$pass http://ec2-18-224-155-110.us-east-2.compute.amazonaws.com:8081/nexus/content/repositories/devopstraining/Codekillers/dynamic_new-${BUILD_NUMBER}.war'
           }   
         }
